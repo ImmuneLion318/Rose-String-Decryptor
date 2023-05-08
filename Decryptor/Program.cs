@@ -24,17 +24,18 @@ namespace Decryptor
             }
             while (Number != 1);
 
-            try
-            {
-                if (IsBase64String(Input))
-                    return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
-                else
-                    return Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(Input));
-            }
-            catch
-            {
-                return Input;
-            }
+            //try
+            //{
+            //    if (IsBase64String(Input))
+            //        return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
+            //    else
+            //        return Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(Input));
+            //}
+            //catch
+            //{
+            //    return Input;
+            //}
+            return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
         }
 
         public static string Decode(string Input)
@@ -47,35 +48,6 @@ namespace Decryptor
                 Array[Number] = (byte)((int)Array[Number] - 1);
             }
             return Encoding.ASCII.GetString(Bytes);
-        }
-
-        public static bool IsBase64String(string Input)
-        {
-            Input = Input.Replace(" ", "").Replace("\t", "").Replace("\n", "").Replace("\r", "");
-
-            if (Input.Length % 4 != 0)
-                return false;
-
-            for (int i = 0; i < Input.Length; i++)
-            {
-                char c = Input[i];
-                if (!(char.IsLetterOrDigit(c) || c == '+' || c == '/' || c == '='))
-                    return false;
-
-                if (c == '=')
-                    if (i < Input.Length - 2 || (i == Input.Length - 2 && Input[Input.Length - 1] != '='))
-                        return false;
-            }
-
-            try
-            {
-                byte[] Data = Convert.FromBase64String(Input);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
         }
         
         public static void Main(string[] Args)
@@ -105,10 +77,11 @@ namespace Decryptor
             {
                 try
                 {
-                    Console.WriteLine("Found String : " + Decrypt(Decode(String)), Console.ForegroundColor = ConsoleColor.Green);
-                    Strings.Remove(String);
+                    byte[] Data = Convert.FromBase64String(Decode(String));
+                    Console.Write($"\"{String}\" -> ", Console.ForegroundColor = ConsoleColor.White);
+                    Console.Write(Decrypt(Decode(String)) + "\n", Console.ForegroundColor = ConsoleColor.Green);
                 }
-                catch (FormatException)
+                catch(FormatException)
                 {
                     Strings.Remove(String);
                     continue;
