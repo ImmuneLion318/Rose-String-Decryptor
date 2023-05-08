@@ -24,17 +24,6 @@ namespace Decryptor
             }
             while (Number != 1);
 
-            //try
-            //{
-            //    if (IsBase64String(Input))
-            //        return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
-            //    else
-            //        return Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(Input));
-            //}
-            //catch
-            //{
-            //    return Input;
-            //}
             return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
         }
 
