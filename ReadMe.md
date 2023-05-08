@@ -45,3 +45,6 @@ So I Began My Rewriting Of Our Their Method Works Which You Can See In The Src U
 
 If You Want To Test This Yourself Here Is A Download Of The Selenite Build I Downloaded You Can Find Everything In There To Try And Create You're Own, If You Feel Compelled To Help Me With My Code In My Adventure Into .Net Reversing You Are Fully Welcomed To Make A Pull Request Show The Changes And I'll Gladly Accept Thanks <3
 [Selenite Download](https://cdn.discordapp.com/attachments/1066452941294293044/1104941399650078750/SeleniteNew.exe "Selenite Download")
+
+Updated Output As Of 5-8-2023
+[![](https://media.discordapp.net/attachments/1090299418378522674/1105074750092480612/image.png)](https://media.discordapp.net/attachments/1090299418378522674/1105074750092480612/image.png)
