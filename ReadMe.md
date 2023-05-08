@@ -6,8 +6,8 @@ This Is By No Means A Good Decryptor This Is My Very First Attempt At Writing My
 Now Starting Off I Found Some Code Snippets Which I Recognized As A String Decryptor I've Seen Similar With Eazfuscator, .Net Reactor, ConfuserEx, Etc
 I Noticed These 2 Methods Here
 [![](https://cdn.discordapp.com/attachments/1066452941294293044/1104940204864843836/image.png)](https://cdn.discordapp.com/attachments/1066452941294293044/1104940204864843836/image.png)
-
 The Obscure Names I Opened Into Were Int Values Of 0, 1, 1 Which Can Be Seen In My Rewrite Where I Write This Function As A Method Called Decode
+
 [![](https://cdn.discordapp.com/attachments/1066452941294293044/1104940307201675414/image.png)](https://cdn.discordapp.com/attachments/1066452941294293044/1104940307201675414/image.png)
 
 Following Finding Both These Methods I Went And Searched Around Running Upon How It's Called
