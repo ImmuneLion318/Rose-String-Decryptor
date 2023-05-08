@@ -8,6 +8,45 @@ I Noticed These 2 Methods Here, The Obscure Names I Opened Into Were Int Values 
 [![](https://cdn.discordapp.com/attachments/1066452941294293044/1104940204864843836/image.png)](https://cdn.discordapp.com/attachments/1066452941294293044/1104940204864843836/image.png)
 [![](https://cdn.discordapp.com/attachments/1066452941294293044/1104940307201675414/image.png)](https://cdn.discordapp.com/attachments/1066452941294293044/1104940307201675414/image.png)
 
+For Reference Here Is Both Of My Rewrites
+```cs
+        public static string Decode(string Input)
+        {
+            byte[] Bytes = Encoding.ASCII.GetBytes(Input);
+            for (int i = 0; i < Bytes.Length; i += 1)
+            {
+                byte[] Array = Bytes;
+                int Number = i;
+                Array[Number] = (byte)((int)Array[Number] - 1);
+            }
+            return Encoding.ASCII.GetString(Bytes);
+        }
+```
+```cs
+        public static string Decrypt(string Input)
+        {
+            short Number = 0;
+            do
+            {
+                if (Number == 0)
+                    Number = 1;
+            }
+            while (Number != 1);
+
+            try
+            {
+                if (IsBase64String(Input))
+                    return Encoding.UTF8.GetString(Convert.FromBase64String(Input));
+                else
+                    return Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(Input));
+            }
+            catch
+            {
+                return Input;
+            }
+        }
+```
+
 Following Finding Both These Methods I Went And Searched Around Running Upon How It's Called
 [![](https://cdn.discordapp.com/attachments/1066452941294293044/1104940705090121790/image.png)](https://cdn.discordapp.com/attachments/1066452941294293044/1104940705090121790/image.png)
 
